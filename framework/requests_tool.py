@@ -22,3 +22,9 @@ class RequestsTool:
     def get_links_to_vacancies(self, text):
         return re.findall(self.base_url + r'/vacancy/\d+', text)
 
+    def get_page_data(self, link):
+        return requests.get(link, headers=self.headers).text
+
+    @classmethod
+    def count_key_words_on_page(cls, text, key_word):
+        return len(re.findall('[' + key_word[0].upper() + '.' + key_word[0].lower() + ']' + key_word[1:], text))
