@@ -2,7 +2,7 @@ import requests
 
 
 class RequestsTool:
-    def __init__(self, base_url):
+    def __init__(self, base_url=None):
         self.headers = {"User-Agent": "Chrome/89.0.4389.90"}
 
         self.base_url = base_url
