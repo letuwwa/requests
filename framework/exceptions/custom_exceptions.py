@@ -1,3 +1,12 @@
+from enum import Enum
+
+
+class ResponseCodes(Enum):
+    ok_code = 200
+    bad_request = 400
+    not_found = 404
+
+
 class IncorrectStatusCodeError(Exception):
     def __init__(self, *args):
         if args:
